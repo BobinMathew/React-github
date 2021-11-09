@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,92 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.App{
+  display: flex;
+}
+
+.leftPanel{
+  border: solid;
+  width: 25%;
+  height: 93vh;
+  overflow: auto;
+}
+
+.rightPanel{
+  border: solid;
+  width: 75%;
+}
+
+.deleteBtn{
+  margin-bottom: 2%;
+  margin-left: 90%;
+}
+
+.rightSubPanel{
+  border: solid;
+  height: 83vh;
+  margin: 2%;
+  overflow: auto;
+}
+
+.rightSubPanelHeader{
+  
+}
+
+.rightSubPanel{
+  display: flex;
+}
+
+.branchTab{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.issueTab{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.addRepoBtn{
+  margin-top: 9%;
+  margin-left: 3%;
+}
+
+.modal{
+  border: solid;
+  width: 30%;
+  height: 50vh;
+  margin-left: 35%;
+  margin-top: 10%;
+  text-align: center;
+  background-color: #fefefe;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  padding: 15%;
+  margin: 15%;
+  text-align: left;
+}
+
+.navBar{
+  border: solid black;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+button{
+  margin: 10%;
 }
