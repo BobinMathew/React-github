@@ -1,8 +1,8 @@
-import React, {useEffect, useContext} from 'react'
-import Context from '../Context/Context'
+import React from 'react'
 import BranchTab from './BranchTab'
 import Delete from './Delete'
 import IssueTab from './IssueTab'
+import CommitTab from './CommitTab'
 
 import {
     BrowserRouter as Router,
@@ -27,6 +27,7 @@ function RightPanel() {
                         <Routes>
                             <Route element={<BranchTab />} path='/' exact />
                             <Route element={<IssueTab />} path='/IssueTab' />
+                            <Route element={<CommitTab />} path='/CommitTab' />
                         </Routes>
                     </Router>
                     

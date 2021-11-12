@@ -6,24 +6,32 @@ export default Context
 
 export const ContextProvider = ({children}) => {
 
-    const [repoList, setRepoList] = useState([])
+    const [repoList, setRepoList] = useState({})
+    const [addedLists, setAddedLists] = useState([])
     const [branchList, setBranchList] = useState([])
     const [issueList, setIssueList] = useState([])
-    const [repoName, setRepoNamet] = useState('')
+    const [commitList, setCommitList] = useState([])
+    const [repoName, setRepoName] = useState('')
+    const [ownerName, setOwnerName] = useState('')
+    const [commitUrl, setCommitUrl] = useState('')
+    const [branchName, setBranchName] = useState('')
 
-    const getRepos = async () => {
-        await axios('https://api.github.com/orgs/knoxpo/repos')
+    const getRepos = async (owner,repo) => {
+        
+        await axios(`https://api.github.com/repos/${owner}/${repo}`)
         .then((res) => {
-            // console.log(res.data)
-            setRepoList(res.data)
+            // console.log(res)
+            setRepoList(res)
         })
         .catch((err) => {
             // console.log(err)
         })
+        
     }
 
-    const getBranches = async (repo) => {
-        await axios(`https://api.github.com/repos/knoxpo/${repo}/branches`)
+    const getBranches = async (repo,owner) => {
+        repo &&
+        await axios(`https://api.github.com/repos/${owner}/${repo}/branches`)
         .then((res) => {
             // console.log(res)
             setBranchList(res.data)
@@ -33,8 +41,9 @@ export const ContextProvider = ({children}) => {
         })
     }
 
-    const getIssues = async (repo) => {
-        await axios(`https://api.github.com/repos/knoxpo/${repo}/issues`)
+    const getIssues = async (repo,owner) => {
+        repo &&
+        await axios(`https://api.github.com/repos/${owner}/${repo}/issues`)
         .then((res) => {
             // console.log(res)
             setIssueList(res.data)
@@ -43,19 +52,41 @@ export const ContextProvider = ({children}) => {
             // console.log(err)
         })
     }
-
     
+
+    const getCommits = async (url) => {
+        
+        await axios(url)
+        .then((res) => {
+            // console.log(res)
+            setCommitList([res.data])
+        })
+        .catch((err) => {
+            // console.log(err)
+        })
+    }
 
     let contextData = {
         repoName: repoName,
-        setRepoNamet: setRepoNamet,
+        setRepoName: setRepoName,
+        ownerName: ownerName,
+        setOwnerName: setOwnerName,
         repoList: repoList,
         branchList: branchList,
         issueList: issueList,
+        addedLists: addedLists,
+        setAddedLists: setAddedLists,
+        commitList: commitList,
+        setCommitList: setCommitList,
+        commitUrl: commitUrl, 
+        setCommitUrl: setCommitUrl,
+        setBranchName: setBranchName,
+        branchName: branchName,
 
         getRepos: getRepos,
         getBranches: getBranches,
         getIssues: getIssues,
+        getCommits: getCommits,
         
     }
 

@@ -4,11 +4,11 @@ import Context from '../Context/Context'
 
 function IssueTab() {
 
-    const {repoName,issueList,getIssues} = useContext(Context)
+    const {repoName,issueList,getIssues,ownerName} = useContext(Context)
 
     useEffect(() => {
-        getIssues(repoName)
-    }, [repoName])
+        getIssues(repoName,ownerName)
+    }, [repoName,ownerName])
 
     return (
         <div className='issueTab'>

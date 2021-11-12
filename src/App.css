@@ -76,13 +76,13 @@
 .branchTab{
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin: 1%;
 }
 
 .issueTab{
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin: 1%;
 }
 
 table, th, td {
@@ -91,25 +91,52 @@ table, th, td {
 }
 
 .addRepoBtn{
-  margin-top: 9%;
-  margin-left: 3%;
+  margin: 3%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+
+.addRepoBtn > button{
+  background-color: blanchedalmond;
+  border-radius: 50%;
+  font-size: 25px;
+  height: 45px;
+  width: 45px;
+  color:rgb(243, 171, 83);
+  border: 1px solid rgb(243, 171, 83);
 }
 
 .modal{
   border: solid;
   width: 30%;
-  height: 50vh;
+  height: 40vh;
   margin-left: 35%;
   margin-top: 10%;
   text-align: center;
   background-color: #fefefe;
 }
 
+input{
+  padding: 3%;
+}
+
+.modalBtn {
+  width: 50%;
+  
+  color:white;
+  background-color: black;
+  margin-top: 10%;
+  margin-left: 22%;
+  padding: 3%;
+}
+
 form{
   display: flex;
   flex-direction: column;
-  padding: 15%;
-  margin: 15%;
+  padding: 10%;
+  margin: 5%;
   text-align: left;
 }
 
@@ -121,6 +148,14 @@ form{
   background-color: black;
 }
 
-button{
+.deleteBtn > button{
   margin: 10%;
 }
+
+.titleSelector:hover {
+  cursor: pointer;
+ }
+
+ .commitTab{
+  margin: 1%;
+ }

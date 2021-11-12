@@ -8,8 +8,8 @@ function AddRepoBtn() {
 
     return (
         <div className='addRepoBtn'>
-            <button onClick={()=>setOpen(true)}>
-                Add
+            <button className='addRepoBtn' onClick={()=>setOpen(true)}>
+                +
             </button>
             {open && <NewRepo open={open} setOpen={setOpen} />}
             
